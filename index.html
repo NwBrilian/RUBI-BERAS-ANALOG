@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RUBI - Beras Analog Berbasis Electrifying Agriculture | Desa Banyukuning</title>
+  <meta name="description" content="Pangan sehat fungsional rendah glikemik dari ubi ungu, mocaf, dan sari buah bit. Diproses ramah lingkungan bebas emisi dan memberdayakan 50 warga Desa Banyukuning.">
+
+  <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            rubi: {
+              dark: '#1E0B2E',      // Royal Ubi Deep Background
+              deep: '#2F1147',      // Deep Purple Base
+              beet: '#8A1C5A',      // Vibrant Beetroot Magenta
+              beetLight: '#B82377', // Hover Beetroot
+              violet: '#7C3AED',    // Electric Violet
+              lavender: '#F8F4FC',  // Light Purple Soft Background
+              cardBg: '#2A113F',    // Dark Card Background
+              ecoGreen: '#10B981',  // Eco Agriculture Green
+              gold: '#F59E0B',      // Award / Quality Gold
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1E0B2E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #8A1C5A;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #B82377;
+    }
+    .gradient-purple-hero {
+      background: radial-gradient(circle at 80% 20%, rgba(138, 28, 90, 0.35) 0%, rgba(30, 11, 46, 0.95) 70%), #1E0B2E;
+    }
+    .glass-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .glass-card-light {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(138, 28, 90, 0.12);
+    }
+  </style>
+</head>
+<body class="bg-rubi-dark text-slate-100 font-sans antialiased selection:bg-rubi-beet selection:text-white">
+
+  <!-- ==================== TOP NOTIFICATION BAR ==================== -->
+  <div class="bg-gradient-to-r from-rubi-beet via-rubi-violet to-rubi-beet py-2 px-4 text-center text-xs md:text-sm font-medium text-white tracking-wide shadow-inner flex items-center justify-center gap-2">
+    <i data-lucide="zap" class="w-4 h-4 text-yellow-300 fill-yellow-300"></i>
+    <span>Inovasi Ecopreneurship Beras Analog Bebas Polusi dari Desa Banyukuning, Kab. Semarang</span>
+  </div>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="sticky top-0 z-40 bg-rubi-dark/90 backdrop-blur-md border-b border-purple-950/60 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      
+      <!-- Logo Brand -->
+      <a href="#hero" class="flex items-center gap-3 group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-rubi-beet to-rubi-violet flex items-center justify-center shadow-lg shadow-purple-900/40 group-hover:scale-105 transition-transform">
+          <span class="font-display font-extrabold text-xl text-white tracking-wider">R</span>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-extrabold text-2xl tracking-tight text-white flex items-center gap-1.5">
+            RUBI <span class="text-xs px-2 py-0.5 rounded-full bg-rubi-beet/30 border border-rubi-beet/50 text-purple-200 font-semibold font-sans">Beras Analog</span>
+          </span>
+          <span class="text-[10px] tracking-wider text-purple-300 uppercase font-medium">Electrifying Agriculture</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="hidden md:flex items-center space-x-7 text-sm font-medium text-slate-300">
+        <a href="#tentang" class="hover:text-white hover:text-rubi-beetLight transition-colors">Tentang Program</a>
+        <a href="#keunggulan" class="hover:text-white hover:text-rubi-beetLight transition-colors">Keunggulan Produk</a>
+        <a href="#katalog" class="hover:text-white hover:text-rubi-beetLight transition-colors">Varian & Harga</a>
+        <a href="#desa" class="hover:text-white hover:text-rubi-beetLight transition-colors">Profil Petani</a>
+        <a href="#dampak" class="hover:text-white hover:text-rubi-beetLight transition-colors">Dampak Keberlanjutan</a>
+      </nav>
+
+      <!-- Cart Button & Mobile Toggle -->
+      <div class="flex items-center gap-3">
+        <!-- Floating Cart Trigger Button -->
+        <button onclick="toggleCartDrawer(true)" class="relative flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-rubi-beet hover:bg-rubi-beetLight text-white font-medium text-sm transition-all shadow-lg shadow-rubi-beet/30 hover:shadow-rubi-beet/50 hover:-translate-y-0.5">
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span class="hidden sm:inline">Keranjang</span>
+          <span id="navCartCount" class="w-5 h-5 rounded-full bg-white text-rubi-beet font-bold text-xs flex items-center justify-center">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden md:hidden bg-rubi-deep/95 border-b border-purple-900 px-6 py-5 space-y-3 text-slate-200">
+      <a href="#tentang" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-rubi-beetLight">Tentang Program</a>
+      <a href="#keunggulan" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-rubi-beetLight">Keunggulan Produk</a>
+      <a href="#katalog" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-rubi-beetLight">Varian & Harga</a>
+      <a href="#desa" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-rubi-beetLight">Profil Petani</a>
+      <a href="#dampak" onclick="toggleMobileMenu()" class="block py-2 text-base font-medium hover:text-rubi-beetLight">Dampak Keberlanjutan</a>
+    </div>
+  </header>
+
+  <!-- ==================== SECTION 1: HERO BANNER ==================== -->
+  <section id="hero" class="relative pt-12 pb-24 md:pt-20 md:pb-32 gradient-purple-hero overflow-hidden">
+    <!-- Ambient Light Glows -->
+    <div class="absolute top-1/4 right-0 w-96 h-96 bg-rubi-beet/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-80 h-80 bg-rubi-violet/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Left Column: Copywriting & CTA -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Micro-Badge -->
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-purple-900/60 border border-purple-700/60 text-purple-200 text-xs sm:text-sm font-medium backdrop-blur-sm">
+            <span class="w-2 h-2 rounded-full bg-rubi-ecoGreen animate-pulse"></span>
+            <span>100% Mesin Berbasis Listrik • Zero Emission</span>
+          </div>
+
+          <!-- Main Headline (H1) -->
+          <h1 class="font-display font-extrabold text-3xl sm:text-5xl xl:text-6xl text-white tracking-tight leading-[1.15]">
+            RUBI: Pengolahan Beras Analog Berbasis <span class="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-400 via-pink-400 to-purple-300">Electrifying Agriculture</span>
+          </h1>
+
+          <!-- Sub-headline / Tagline -->
+          <p class="text-base sm:text-lg lg:text-xl text-purple-100/80 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Pangan sehat fungsional sebagai alternatif karbohidrat <strong class="text-white font-semibold">rendah glikemik</strong>. Diformulasikan dari ubi jalar ungu dan buah bit, memadukan gaya hidup sehat dengan pemberdayaan nyata <strong class="text-white font-semibold">50 petani Desa Banyukuning</strong>.
+          </p>
+
+          <!-- Action Buttons (Hybrid CTAs) -->
+          <div class="pt-2 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            <a href="#katalog" class="inline-flex items-center justify-center gap-2.5 px-7 py-4 rounded-xl bg-gradient-to-r from-rubi-beet to-rubi-violet hover:from-rubi-beetLight hover:to-purple-600 text-white font-semibold text-base shadow-xl shadow-rubi-beet/30 hover:shadow-rubi-beet/50 hover:-translate-y-0.5 transition-all">
+              <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+              <span>Pesan Beras Sehat RUBI</span>
+            </a>
+            <a href="#desa" class="inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-purple-950/60 hover:bg-purple-900/80 border border-purple-700/50 text-purple-200 hover:text-white font-medium text-base backdrop-blur-sm transition-all">
+              <i data-lucide="heart-handshake" class="w-5 h-5 text-rubi-ecoGreen"></i>
+              <span>Dukung Kemandirian Petani</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges Strip -->
+          <div class="pt-6 grid grid-cols-3 gap-3 border-t border-purple-900/80 max-w-xl mx-auto lg:mx-0">
+            <div class="flex items-center gap-2 text-left">
+              <i data-lucide="check-circle-2" class="w-5 h-5 text-rubi-ecoGreen shrink-0"></i>
+              <span class="text-xs sm:text-sm text-purple-200">Rendah Glikemik & Kaya Serat</span>
+            </div>
+            <div class="flex items-center gap-2 text-left">
+              <i data-lucide="shield-check" class="w-5 h-5 text-rubi-ecoGreen shrink-0"></i>
+              <span class="text-xs sm:text-sm text-purple-200">Higienis & Alami Tanpa Pewarna</span>
+            </div>
+            <div class="flex items-center gap-2 text-left">
+              <i data-lucide="leaf" class="w-5 h-5 text-rubi-ecoGreen shrink-0"></i>
+              <span class="text-xs sm:text-sm text-purple-200">Ecopreneurship Berkelanjutan</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Right Column: Visual Product Showcase -->
+        <div class="lg:col-span-5 relative">
+          <!-- Main Product Display Card -->
+          <div class="relative mx-auto max-w-md rounded-3xl p-6 bg-gradient-to-b from-purple-900/50 to-rubi-deep/80 border border-purple-700/50 shadow-2xl shadow-purple-950/90 backdrop-blur-xl">
+            
+            <!-- Floating Badge: Low GI -->
+            <div class="absolute -top-4 -left-4 z-20 px-4 py-2 rounded-xl bg-rubi-ecoGreen text-white text-xs font-bold shadow-lg flex items-center gap-1.5 animate-bounce">
+              <i data-lucide="activity" class="w-4 h-4"></i>
+              <span>Low Glycemic Index</span>
+            </div>
+
+            <!-- Floating Badge: Antioksidan -->
+            <div class="absolute -bottom-4 -right-2 z-20 px-4 py-2 rounded-xl bg-rubi-beet text-white text-xs font-bold shadow-lg flex items-center gap-1.5">
+              <i data-lucide="sparkles" class="w-4 h-4"></i>
+              <span>Tinggi Antosianin & Betalain</span>
+            </div>
+
+            <!-- Visual Grain Graphic Container -->
+            <div class="relative rounded-2xl overflow-hidden bg-gradient-to-tr from-purple-950 via-rubi-beet/30 to-purple-900 p-8 text-center border border-purple-600/30">
+              
+              <!-- Abstract Graphic Representation of RUBI Rice -->
+              <div class="w-40 h-40 mx-auto rounded-full bg-gradient-to-br from-fuchsia-600 to-rubi-deep p-1.5 shadow-xl relative flex items-center justify-center">
+                <div class="w-full h-full rounded-full bg-rubi-dark flex flex-col items-center justify-center text-center p-4 border border-purple-500/30">
+                  <i data-lucide="wheat" class="w-12 h-12 text-fuchsia-400 mb-1"></i>
+                  <span class="text-xs font-display font-bold text-white uppercase tracking-wider">Beras Analog</span>
+                  <span class="text-[11px] text-purple-300 font-semibold">Ubi Ungu & Bit</span>
+                </div>
+              </div>
+
+              <div class="mt-6 space-y-2">
+                <span class="inline-block px-3 py-1 rounded-full bg-purple-800/80 text-fuchsia-200 text-xs font-semibold">
+                  Tersedia 2 Varian Kemasan
+                </span>
+                <h3 class="font-display font-bold text-xl text-white">Kemasan Kedap Udara & Pouch Glossy</h3>
+                <p class="text-xs text-purple-200/80 leading-relaxed">
+                  Teknologi cetak analog butiran beras pulen dengan aroma harum khas ubi alami.
+                </p>
+              </div>
+
+              <!-- Quick Price Glance -->
+              <div class="mt-5 pt-4 border-t border-purple-800/50 flex justify-between items-center text-left">
+                <div>
+                  <span class="text-[11px] text-purple-300 block">Mulai dari</span>
+                  <span class="text-lg font-extrabold text-white">Rp27.600 <span class="text-xs font-normal text-purple-300">/ 500g</span></span>
+                </div>
+                <button onclick="quickAddToCart('500g')" class="px-3.5 py-1.5 rounded-lg bg-rubi-beet hover:bg-rubi-beetLight text-white text-xs font-semibold transition-all">
+                  + Beli Cepat
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 2: TENTANG PROGRAM ==================== -->
+  <section id="tentang" class="py-20 md:py-28 bg-[#180825] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-fuchsia-400 bg-rubi-beet/20 px-3.5 py-1.5 rounded-full border border-rubi-beet/30">
+          Tentang Inovasi Program
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">
+          Transformasi Ecopreneurship Pangan Masa Depan
+        </h2>
+        <p class="text-base text-purple-200/80 leading-relaxed">
+          RUBI mengintegrasikan komoditas pangan lokal berkualitas dengan teknologi pertanian modern berbasis energi bersih untuk menjawab tantangan gizi dan ketahanan pangan nasional.
+        </p>
+      </div>
+
+      <!-- 3 Pillar Cards of Program -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Pillar 1: Alternatif Beras Padi -->
+        <div class="glass-card rounded-2xl p-7 relative hover:border-rubi-beet/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-fuchsia-900/60 border border-fuchsia-600/40 flex items-center justify-center text-fuchsia-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="layers" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Reduksi Ketergantungan Beras Padi</h3>
+          <p class="text-sm text-purple-200/80 leading-relaxed">
+            Diversifikasi konsumsi karbohidrat sehat nasional dengan menghadirkan beras analog dari ubi jalar, mocaf, dan buah bit yang kaya fito-nutrisi dan tidak mengikis cadangan beras padi konvensional.
+          </p>
+        </div>
+
+        <!-- Pillar 2: Lompatan Nilai Tambah Panen -->
+        <div class="glass-card rounded-2xl p-7 relative hover:border-rubi-beet/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-purple-900/60 border border-purple-600/40 flex items-center justify-center text-purple-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="trending-up" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Hilirisasi & Peningkatan Nilai Jual</h3>
+          <p class="text-sm text-purple-200/80 leading-relaxed">
+            Menghilangkan jerat harga murah ubi jalar mentah saat panen raya. Melalui hilirisasi beras analog bernilai jual tinggi, petani memperoleh margin keuntungan berlipat ganda secara adil.
+          </p>
+        </div>
+
+        <!-- Pillar 3: Electrifying Agriculture -->
+        <div class="glass-card rounded-2xl p-7 relative hover:border-rubi-beet/60 transition-all duration-300 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-950/60 border border-emerald-600/40 flex items-center justify-center text-emerald-300 mb-6 group-hover:scale-110 transition-transform">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-3">Electrifying Agriculture Bersih</h3>
+          <p class="text-sm text-purple-200/80 leading-relaxed">
+            100% proses pengolahan, pencampuran, ekstrusi butiran hingga oven pengeringan digerakkan oleh mesin berbasis tenaga listrik efisien, bebas polusi udara dan ramah lingkungan hidup.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Ingredient Formula Showcase -->
+      <div class="mt-14 rounded-3xl p-8 bg-gradient-to-r from-purple-950/90 via-rubi-deep to-purple-950/90 border border-purple-800/60">
+        <h3 class="font-display font-bold text-xl text-center text-white mb-6">
+          Formulasi Pangan Fungsional Unggul RUBI
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+          
+          <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-700/40">
+            <span class="text-2xl mb-1 block">🍠</span>
+            <h4 class="font-semibold text-white text-base">Ubi Jalar Ungu Pilihan</h4>
+            <p class="text-xs text-purple-200/70 mt-1">Sumber utama antosianin alami, serat larut pangan, serta kaya rasa manis gurih alami.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-700/40">
+            <span class="text-2xl mb-1 block">🌾</span>
+            <h4 class="font-semibold text-white text-base">Tepung Mocaf Berkualitas</h4>
+            <p class="text-xs text-purple-200/70 mt-1">Olahan singkong fermentasi alami yang memberi tekstur butiran pulen menyerupai beras padi premium.</p>
+          </div>
+
+          <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-700/40">
+            <span class="text-2xl mb-1 block">🍇</span>
+            <h4 class="font-semibold text-white text-base">Ekstrak Sari Buah Bit</h4>
+            <p class="text-xs text-purple-200/70 mt-1">Penyumbang pigmen betalain merah alami yang memperkuat stamina dan sirkulasi darah tubuh.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 3: SPESIFIKASI & KEUNGGULAN PRODUK ==================== -->
+  <section id="keunggulan" class="py-20 md:py-28 bg-gradient-to-b from-[#180825] to-rubi-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-emerald-400 bg-emerald-950/60 px-3.5 py-1.5 rounded-full border border-emerald-700/50">
+          Spesifikasi & Kandungan Gizi
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">
+          Kaya Serat, Mikronutrien & Kekuatan Triple Antioksidan
+        </h2>
+        <p class="text-base text-purple-200/80 leading-relaxed">
+          Lebih dari sekadar sumber energi. Beras analog RUBI diperkaya senyawa fito-nutrisi aktif untuk menjaga stamina dan regenerasi sel tubuh secara optimal.
+        </p>
+      </div>
+
+      <!-- Feature Grid: Triple Antioksidan -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+        
+        <!-- Feature 1: Beta-Karoten -->
+        <div class="p-6 rounded-2xl bg-gradient-to-b from-purple-900/40 to-rubi-dark border border-purple-700/50 hover:border-rubi-beet transition-all">
+          <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-300 flex items-center justify-center font-bold mb-4">
+            <i data-lucide="eye" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Beta-Karoten Alami</h3>
+          <p class="text-sm text-purple-200/75 leading-relaxed">
+            Prekursor vitamin A esensial yang meningkatkan daya tahan tubuh, menjaga kesehatan penglihatan, serta mempercepat proses pemulihan sel.
+          </p>
+        </div>
+
+        <!-- Feature 2: Antosianin -->
+        <div class="p-6 rounded-2xl bg-gradient-to-b from-purple-900/40 to-rubi-dark border border-purple-700/50 hover:border-rubi-beet transition-all">
+          <div class="w-10 h-10 rounded-lg bg-fuchsia-500/20 text-fuchsia-300 flex items-center justify-center font-bold mb-4">
+            <i data-lucide="shield" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Antosianin Ubi Ungu</h3>
+          <p class="text-sm text-purple-200/75 leading-relaxed">
+            Senyawa bioaktif polifenol dengan kapasitas antioksidan tinggi untuk menangkal radikal bebas, menyehatkan pembuluh darah, dan anti-inflamasi alami.
+          </p>
+        </div>
+
+        <!-- Feature 3: Betalain -->
+        <div class="p-6 rounded-2xl bg-gradient-to-b from-purple-900/40 to-rubi-dark border border-purple-700/50 hover:border-rubi-beet transition-all">
+          <div class="w-10 h-10 rounded-lg bg-rose-500/20 text-rose-300 flex items-center justify-center font-bold mb-4">
+            <i data-lucide="heart-pulse" class="w-5 h-5"></i>
+          </div>
+          <h3 class="font-display font-bold text-lg text-white mb-2">Betalain Buah Bit</h3>
+          <p class="text-sm text-purple-200/75 leading-relaxed">
+            Pigmen alami fungsional yang mendukung detoksifikasi organ hati, melancarkan aliran oksigen dalam sel, dan menjaga elastisitas dinding kardiovaskular.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- ==================== PRODUCT CATALOG & PRICING ==================== -->
+      <div id="katalog" class="scroll-mt-24 pt-6">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <h3 class="font-display font-extrabold text-2xl sm:text-3xl text-white mb-2">
+            Pilihan Varian Kemasan Beras RUBI
+          </h3>
+          <p class="text-sm text-purple-200/75">
+            Dikemas dengan standar sanitasi tinggi, kedap udara, dan siap dikirim ke seluruh nusantara.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          
+          <!-- Variant 1: 500 Gram -->
+          <div class="rounded-3xl p-8 bg-gradient-to-b from-purple-950/70 to-rubi-deep/90 border border-purple-700/60 shadow-xl relative flex flex-col justify-between hover:border-fuchsia-500/70 transition-all">
+            <div>
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-3 py-1 rounded-full bg-purple-800/80 text-fuchsia-300 text-xs font-semibold">
+                  Kemasan Higienis
+                </span>
+                <span class="text-xs text-purple-300 font-medium">Isi Bersih 500g</span>
+              </div>
+              <h4 class="font-display font-bold text-2xl text-white">Varian 500 Gram</h4>
+              <p class="text-xs text-purple-200/80 mt-1 mb-6">
+                Kemasan vacuum kedap udara plus kardus pelindung eksklusif. Sangat cocok untuk konsumsi personal dan uji coba menu sehat keluarga.
+              </p>
+
+              <!-- Price Tag -->
+              <div class="mb-6 pb-6 border-b border-purple-800/60">
+                <span class="text-3xl font-extrabold text-white">Rp27.600</span>
+                <span class="text-xs text-purple-300 ml-1">/ kotak</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="space-y-2.5 text-xs text-purple-200/90 mb-8">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-rubi-ecoGreen"></i>
+                  <span>Plastik vacuum kedap udara tahan lembap</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-rubi-ecoGreen"></i>
+                  <span>Kemasan kardus box pelindung benturan</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-rubi-ecoGreen"></i>
+                  <span>Porsi pas untuk konsumsi 4–5 kali makan</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Action Button -->
+            <button onclick="quickAddToCart('500g')" class="w-full py-3.5 rounded-xl bg-rubi-beet hover:bg-rubi-beetLight text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-rubi-beet/30">
+              <i data-lucide="cart" class="w-4 h-4"></i>
+              <span>+ Tambah Varian 500g ke Keranjang</span>
+            </button>
+          </div>
+
+          <!-- Variant 2: 1 Kilogram (Best Value) -->
+          <div class="rounded-3xl p-8 bg-gradient-to-b from-rubi-beet/20 via-purple-950 to-rubi-deep/95 border-2 border-fuchsia-500/80 shadow-2xl relative flex flex-col justify-between hover:border-fuchsia-400 transition-all">
+            
+            <!-- Best Value Ribbon -->
+            <div class="absolute -top-3.5 right-6 px-3.5 py-1 rounded-full bg-gradient-to-r from-amber-500 to-amber-600 text-slate-900 font-extrabold text-xs shadow-md">
+              Pilihan Paling Hemat
+            </div>
+
+            <div>
+              <div class="flex justify-between items-start mb-4">
+                <span class="px-3 py-1 rounded-full bg-rubi-beet/40 text-fuchsia-200 text-xs font-semibold">
+                  Pouch Glossy Premium
+                </span>
+                <span class="text-xs text-purple-300 font-medium">Isi Bersih 1.000g (1 Kg)</span>
+              </div>
+              <h4 class="font-display font-bold text-2xl text-white">Varian 1 Kilogram</h4>
+              <p class="text-xs text-purple-200/80 mt-1 mb-6">
+                Kemasan standing pouch glossy dengan zipper lock kedap udara. Solusi konsumsi harian keluarga sehat dengan harga per gram paling hemat.
+              </p>
+
+              <!-- Price Tag -->
+              <div class="mb-6 pb-6 border-b border-purple-800/60">
+                <span class="text-3xl font-extrabold text-white">Rp48.600</span>
+                <span class="text-xs text-emerald-400 font-semibold ml-2">(Hemat Rp6.600)</span>
+              </div>
+
+              <!-- Feature List -->
+              <ul class="space-y-2.5 text-xs text-purple-200/90 mb-8">
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-rubi-ecoGreen"></i>
+                  <span>Standing Pouch Glossy berpenampilan premium</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-rubi-ecoGreen"></i>
+                  <span>Dilengkapi Zipper Lock yang dapat ditutup kembali</span>
+                </li>
+                <li class="flex items-center gap-2">
+                  <i data-lucide="check" class="w-4 h-4 text-rubi-ecoGreen"></i>
+                  <span>Daya tahan simpan prima hingga 12 bulan</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Action Button -->
+            <button onclick="quickAddToCart('1kg')" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-rubi-beet to-rubi-violet hover:from-rubi-beetLight hover:to-purple-600 text-white font-semibold text-sm transition-all flex items-center justify-center gap-2 shadow-xl shadow-rubi-beet/40">
+              <i data-lucide="cart" class="w-4 h-4"></i>
+              <span>+ Tambah Varian 1kg ke Keranjang</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 4: PROFIL DESA & PEMBERDAYAAN PETANI ==================== -->
+  <section id="desa" class="py-20 md:py-28 bg-[#150720] relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-amber-400 bg-amber-950/60 px-3.5 py-1.5 rounded-full border border-amber-700/50">
+          Profil Desa & Sosok di Balik Layar
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">
+          Lahir dari Tanah Subur Banyukuning, Digerakkan 50 Warga Berdaya
+        </h2>
+        <p class="text-base text-purple-200/80 leading-relaxed">
+          Setiap butir beras RUBI adalah buah dari kolaborasi erat masyarakat agraris dan modernisasi teknologi pedesaan di lereng pegunungan yang sejuk.
+        </p>
+      </div>
+
+      <!-- Village Stats Showcase -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        
+        <div class="glass-card rounded-2xl p-6 text-center border-purple-800/60">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display text-white mb-1">150 Ha</div>
+          <div class="text-xs font-semibold text-fuchsia-300 uppercase tracking-wider">Lahan Pertanian Ubi</div>
+          <p class="text-xs text-purple-200/70 mt-2">Hamparan tanah subur lereng Gunung Ungaran yang kaya mineral vulkanik.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center border-purple-800/60">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display text-rubi-ecoGreen mb-1">~40 Ton/Ha</div>
+          <div class="text-xs font-semibold text-emerald-300 uppercase tracking-wider">Produktivitas Panen</div>
+          <p class="text-xs text-purple-200/70 mt-2">Potensi panen melimpah yang kini memiliki pasar hilirisasi bernilai tinggi.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center border-purple-800/60">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display text-amber-400 mb-1">50 Jiwa</div>
+          <div class="text-xs font-semibold text-amber-300 uppercase tracking-wider">Warga Terlibat Langsung</div>
+          <p class="text-xs text-purple-200/70 mt-2">Ekosistem inklusif dari petani, generasi muda, hingga keluarga prasejahtera.</p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 text-center border-purple-800/60">
+          <div class="text-3xl sm:text-4xl font-extrabold font-display text-fuchsia-400 mb-1">Ngudi Tani</div>
+          <div class="text-xs font-semibold text-fuchsia-200 uppercase tracking-wider">Kelompok Tani Mitra</div>
+          <p class="text-xs text-purple-200/70 mt-2">Kemitraan kokoh menjaga kepastian harga dan pasokan bahan baku segar.</p>
+        </div>
+
+      </div>
+
+      <!-- Empowerment Role Breakdown (50 Warga Desa) -->
+      <div class="rounded-3xl p-8 bg-gradient-to-br from-purple-950/80 via-rubi-deep/90 to-purple-950/80 border border-purple-700/60">
+        <h3 class="font-display font-bold text-xl text-white text-center mb-8">
+          Struktur Pemberdayaan 50 Warga Desa Banyukuning
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Role 1: 17 Petani -->
+          <div class="rounded-2xl p-6 bg-purple-900/40 border border-purple-700/40">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-300 flex items-center justify-center font-bold text-lg">17</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Petani Ngudi Tani</h4>
+                <span class="text-xs text-amber-300">Penyedia Bahan Baku Utama</span>
+              </div>
+            </div>
+            <p class="text-xs text-purple-200/80 leading-relaxed">
+              Memasok ubi jalar ungu dan singkong mocaf pilihan. Memperoleh jaminan harga beli panen yang stabil di atas rata-rata harga pasar tengkulak.
+            </p>
+          </div>
+
+          <!-- Role 2: 15 Karang Taruna -->
+          <div class="rounded-2xl p-6 bg-purple-900/40 border border-purple-700/40">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-fuchsia-500/20 text-fuchsia-300 flex items-center justify-center font-bold text-lg">15</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Pemuda Karang Taruna</h4>
+                <span class="text-xs text-fuchsia-300">Produksi & Pemasaran Digital</span>
+              </div>
+            </div>
+            <p class="text-xs text-purple-200/80 leading-relaxed">
+              Mengoperasikan mesin presisi listrik, manajemen inventaris gudang, serta mengelola kanal distribusi dan pemasaran digital e-commerce.
+            </p>
+          </div>
+
+          <!-- Role 3: 18 Keluarga Prasejahtera -->
+          <div class="rounded-2xl p-6 bg-purple-900/40 border border-purple-700/40">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center font-bold text-lg">18</span>
+              <div>
+                <h4 class="font-bold text-white text-base">Keluarga Prasejahtera</h4>
+                <span class="text-xs text-emerald-300">Pengolahan & Kendali Mutu</span>
+              </div>
+            </div>
+            <p class="text-xs text-purple-200/80 leading-relaxed">
+              Diberdayakan secara aktif dalam sortasi bahan baku, higienisasi, penimbangan, pencetakan beras analog, serta jaminan kualitas (*quality control*).
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== SECTION 5: DAMPAK KEBERLANJUTAN (IMPACT) ==================== -->
+  <section id="dampak" class="py-20 md:py-28 bg-rubi-dark relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+        <span class="text-xs font-bold uppercase tracking-wider text-fuchsia-400 bg-rubi-beet/20 px-3.5 py-1.5 rounded-full border border-rubi-beet/30">
+          Triple Bottom Line Impact
+        </span>
+        <h2 class="font-display font-extrabold text-3xl sm:text-4xl text-white">
+          Dampak Keberlanjutan Nyata: Ekonomi, Sosial, & Lingkungan
+        </h2>
+        <p class="text-base text-purple-200/80 leading-relaxed">
+          Kekuatan inovasi RUBI diukur dari seberapa besar manfaat yang kembali ke masyarakat dan bumi pertiwi secara jangka panjang.
+        </p>
+      </div>
+
+      <!-- 3 Impact Pillars -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Impact 1: Ekonomi -->
+        <div class="rounded-3xl p-8 bg-gradient-to-b from-purple-900/40 to-rubi-deep/80 border border-purple-700/50 hover:border-amber-400/50 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center mb-6">
+            <i data-lucide="coins" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-2">Dampak Ekonomi</h3>
+          <span class="text-xs font-semibold text-amber-300 block mb-4">KUBE & Nilai Tambah Panen</span>
+          <p class="text-sm text-purple-200/80 leading-relaxed mb-4">
+            Menciptakan nilai tambah drastis pada komoditas ubi jalar lokal. Mengalirkan keuntungan langsung melalui wadah <strong>Kelompok Usaha Bersama (KUBE)</strong> sebagai pendapatan baru warga desa.
+          </p>
+          <ul class="text-xs text-purple-200/70 space-y-2 border-t border-purple-800/50 pt-4">
+            <li>• Margin pendapatan petani meningkat signifikan</li>
+            <li>• Pembagian laba usaha transparan dan merata</li>
+          </ul>
+        </div>
+
+        <!-- Impact 2: Sosial -->
+        <div class="rounded-3xl p-8 bg-gradient-to-b from-purple-900/40 to-rubi-deep/80 border border-purple-700/50 hover:border-fuchsia-400/50 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-fuchsia-500/20 text-fuchsia-400 flex items-center justify-center mb-6">
+            <i data-lucide="users" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-2">Dampak Sosial</h3>
+          <span class="text-xs font-semibold text-fuchsia-300 block mb-4">Kapasitas Kelembagaan & Kemandirian</span>
+          <p class="text-sm text-purple-200/80 leading-relaxed mb-4">
+            Memperkuat kapasitas kelembagaan masyarakat desa, memfasilitasi akses teknologi pengolahan modern, dan membangun kemandirian ekonomi bagi keluarga prasejahtera secara berkelanjutan.
+          </p>
+          <ul class="text-xs text-purple-200/70 space-y-2 border-t border-purple-800/50 pt-4">
+            <li>• Pelatihan sertifikasi higienitas & mutu pangan</li>
+            <li>• Membuka lapangan kerja lokal bagi anak muda</li>
+          </ul>
+        </div>
+
+        <!-- Impact 3: Lingkungan -->
+        <div class="rounded-3xl p-8 bg-gradient-to-b from-purple-900/40 to-rubi-deep/80 border border-purple-700/50 hover:border-emerald-400/50 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-6">
+            <i data-lucide="sprout" class="w-6 h-6"></i>
+          </div>
+          <h3 class="font-display font-bold text-xl text-white mb-2">Dampak Lingkungan</h3>
+          <span class="text-xs font-semibold text-emerald-300 block mb-4">Zero Emission & Reduksi Food Loss</span>
+          <p class="text-sm text-purple-200/80 leading-relaxed mb-4">
+            Mengoptimalkan pemanfaatan seluruh hasil panen (termasuk ukuran non-standar) guna menekan <strong>food loss</strong>. Rantai mesin berbasis listrik menjamin nihil emisi polusi udara di pedesaan.
+          </p>
+          <ul class="text-xs text-purple-200/70 space-y-2 border-t border-purple-800/50 pt-4">
+            <li>• Pemanfaatan biomassa pertanian zero-waste</li>
+            <li>• Pengurangan jejak karbon rantai pasok pangan</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Quote Banner -->
+      <div class="mt-16 rounded-3xl p-8 bg-gradient-to-r from-rubi-beet/30 via-purple-950 to-rubi-beet/20 border border-rubi-beet/50 text-center max-w-4xl mx-auto">
+        <i data-lucide="quote" class="w-8 h-8 text-fuchsia-400 mx-auto mb-3"></i>
+        <blockquote class="text-lg sm:text-xl font-display font-medium text-white italic max-w-2xl mx-auto">
+          "Ketika teknologi ramah lingkungan hadir di sawah dan ladang, kemandirian pangan bukan lagi mimpi, melainkan rezeki nyata bagi seluruh warga desa."
+        </blockquote>
+        <div class="mt-4 text-xs font-semibold text-fuchsia-300">
+          — Kelompok Tani Ngudi Tani, Desa Banyukuning
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FINAL CALL TO ACTION BANNER ==================== -->
+  <section class="py-20 bg-gradient-to-t from-black via-rubi-dark to-[#150720] border-t border-purple-900/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+      <span class="inline-block px-4 py-1.5 rounded-full bg-rubi-beet text-white font-bold text-xs uppercase tracking-wider">
+        Ambil Langkah Nyata
+      </span>
+      <h2 class="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
+        Ganti Karbohidrat Harian Anda dengan RUBI,<br class="hidden sm:inline"> Sehatkan Tubuh & Sejahterakan Petani
+      </h2>
+      <p class="text-base sm:text-lg text-purple-200/80 max-w-2xl mx-auto">
+        Mulai kebiasaan makan sehat berindeks glikemik rendah hari ini. Setiap kilogram beras yang Anda pesan adalah kontribusi nyata bagi masa depan 50 warga Desa Banyukuning.
+      </p>
+      <div class="pt-4 flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="toggleCartDrawer(true)" class="px-8 py-4 rounded-xl bg-gradient-to-r from-rubi-beet to-rubi-violet hover:from-rubi-beetLight hover:to-purple-600 text-white font-bold text-base shadow-2xl shadow-rubi-beet/50 hover:scale-105 transition-all flex items-center justify-center gap-2">
+          <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+          <span>Buka Keranjang Belanja</span>
+        </button>
+        <a href="https://wa.me/?text=Halo%20Admin%20RUBI,%20saya%20tertarik%20dengan%20program%20Beras%20Analog%20Electrifying%20Agriculture%20dan%20ingin%20berdiskusi%20kemitraan." target="_blank" class="px-7 py-4 rounded-xl bg-purple-900/60 hover:bg-purple-800/80 text-purple-200 hover:text-white font-semibold text-base border border-purple-700/50 transition-all flex items-center justify-center gap-2">
+          <i data-lucide="message-circle" class="w-5 h-5 text-emerald-400"></i>
+          <span>Konsultasi & Kemitraan</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-black text-slate-400 text-xs py-14 border-t border-purple-950">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Brand & Mission -->
+      <div class="space-y-4 md:col-span-2">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-xl bg-rubi-beet flex items-center justify-center text-white font-display font-extrabold text-base">R</div>
+          <span class="text-white font-display font-extrabold text-xl">RUBI</span>
+        </div>
+        <p class="text-purple-300/70 text-xs max-w-md leading-relaxed">
+          Inovasi Beras Analog berbasis <em>Electrifying Agriculture</em> dari ubi jalar ungu, tepung mocaf, dan sari buah bit. Alternatif karbohidrat fungsional rendah glikemik pelopor kemandirian pangan desa.
+        </p>
+        <p class="text-[11px] text-purple-400/60">
+          © 2026 RUBI Beras Analog. Hak cipta dilindungi undang-undang.
+        </p>
+      </div>
+
+      <!-- Alamat & Lokasi Petani -->
+      <div class="space-y-2">
+        <h4 class="text-white font-semibold text-sm font-display">Sentra Produksi</h4>
+        <p class="text-xs text-purple-300/80 leading-relaxed">
+          Kelompok Tani "Ngudi Tani"<br>
+          Desa Banyukuning, Kec. Bandungan,<br>
+          Kab. Semarang, Jawa Tengah 50614
+        </p>
+        <div class="pt-2 text-xs text-emerald-400 flex items-center gap-1.5">
+          <i data-lucide="map-pin" class="w-4 h-4 shrink-0"></i>
+          <span>Kaki Gunung Ungaran (150 Ha)</span>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="space-y-2">
+        <h4 class="text-white font-semibold text-sm font-display">Tautan Navigasi</h4>
+        <ul class="space-y-1.5 text-xs text-purple-300/70">
+          <li><a href="#tentang" class="hover:text-white transition-colors">Tentang Program</a></li>
+          <li><a href="#keunggulan" class="hover:text-white transition-colors">Keunggulan Nutrisi</a></li>
+          <li><a href="#katalog" class="hover:text-white transition-colors">Varian & Pemesanan</a></li>
+          <li><a href="#desa" class="hover:text-white transition-colors">Profil 50 Warga</a></li>
+          <li><a href="#dampak" class="hover:text-white transition-colors">Triple Bottom Line</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==================== MINI CART DRAWER (INTERACTIVE SIMULATION) ==================== -->
+  <div id="cartDrawerBackdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden transition-opacity"></div>
+  
+  <div id="cartDrawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-rubi-deep border-l border-purple-800 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 flex flex-col justify-between">
+    
+    <!-- Cart Header -->
+    <div class="p-6 border-b border-purple-800/80 flex items-center justify-between bg-rubi-dark/70">
+      <div class="flex items-center gap-2.5">
+        <i data-lucide="shopping-bag" class="w-5 h-5 text-rubi-beet"></i>
+        <h3 class="font-display font-bold text-lg text-white">Keranjang Pemesanan</h3>
+      </div>
+      <button onclick="toggleCartDrawer(false)" class="p-2 text-purple-300 hover:text-white rounded-lg hover:bg-purple-900/50">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+    </div>
+
+    <!-- Cart Body: Items List -->
+    <div class="p-6 overflow-y-auto flex-1 space-y-4">
+      
+      <!-- Social Impact Note -->
+      <div class="p-3.5 rounded-xl bg-rubi-beet/20 border border-rubi-beet/40 text-xs text-purple-200 flex items-center gap-2.5">
+        <i data-lucide="sparkles" class="w-4 h-4 text-fuchsia-400 shrink-0"></i>
+        <span>Pemesanan Anda mendukung langsung pendapatan 50 warga Desa Banyukuning!</span>
+      </div>
+
+      <!-- Item 1: 500g -->
+      <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-800/60 flex items-center justify-between">
+        <div>
+          <h4 class="font-bold text-white text-sm">RUBI 500 Gram</h4>
+          <span class="text-xs text-purple-300">Kemasan Vacuum & Box</span>
+          <div class="text-xs font-semibold text-fuchsia-300 mt-1">Rp27.600</div>
+        </div>
+        <div class="flex items-center gap-2 bg-rubi-dark px-2.5 py-1.5 rounded-lg border border-purple-800">
+          <button onclick="updateQty('500g', -1)" class="w-6 h-6 flex items-center justify-center text-purple-300 hover:text-white font-bold text-sm">-</button>
+          <span id="qty-500g" class="w-6 text-center text-sm font-bold text-white">0</span>
+          <button onclick="updateQty('500g', 1)" class="w-6 h-6 flex items-center justify-center text-purple-300 hover:text-white font-bold text-sm">+</button>
+        </div>
+      </div>
+
+      <!-- Item 2: 1kg -->
+      <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-800/60 flex items-center justify-between">
+        <div>
+          <h4 class="font-bold text-white text-sm">RUBI 1 Kilogram</h4>
+          <span class="text-xs text-purple-300">Standing Pouch Glossy</span>
+          <div class="text-xs font-semibold text-fuchsia-300 mt-1">Rp48.600</div>
+        </div>
+        <div class="flex items-center gap-2 bg-rubi-dark px-2.5 py-1.5 rounded-lg border border-purple-800">
+          <button onclick="updateQty('1kg', -1)" class="w-6 h-6 flex items-center justify-center text-purple-300 hover:text-white font-bold text-sm">-</button>
+          <span id="qty-1kg" class="w-6 text-center text-sm font-bold text-white">0</span>
+          <button onclick="updateQty('1kg', 1)" class="w-6 h-6 flex items-center justify-center text-purple-300 hover:text-white font-bold text-sm">+</button>
+        </div>
+      </div>
+
+      <!-- Checkout Information Form Inputs -->
+      <div class="pt-4 border-t border-purple-900 space-y-3">
+        <label class="block text-xs font-medium text-purple-300">Data Pemesan (Opsional untuk WhatsApp):</label>
+        <input type="text" id="custName" placeholder="Nama Lengkap Anda" class="w-full px-3.5 py-2 text-xs rounded-lg bg-rubi-dark border border-purple-800 text-white placeholder-purple-400/50 focus:outline-none focus:border-rubi-beet">
+        <input type="text" id="custAddress" placeholder="Kota / Alamat Pengiriman" class="w-full px-3.5 py-2 text-xs rounded-lg bg-rubi-dark border border-purple-800 text-white placeholder-purple-400/50 focus:outline-none focus:border-rubi-beet">
+      </div>
+
+    </div>
+
+    <!-- Cart Footer: Subtotal & WhatsApp CTA -->
+    <div class="p-6 border-t border-purple-800/80 bg-rubi-dark/90 space-y-4">
+      <div class="flex justify-between items-center">
+        <span class="text-sm text-purple-300">Estimasi Total:</span>
+        <span id="cartTotalPrice" class="text-xl font-extrabold text-white">Rp0</span>
+      </div>
+      
+      <button onclick="checkoutToWhatsApp()" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-sm transition-all flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/40">
+        <i data-lucide="send" class="w-4 h-4"></i>
+        <span>Pesan Sekarang via WhatsApp</span>
+      </button>
+
+      <p class="text-[11px] text-center text-purple-300/60">
+        Pemesanan akan langsung diteruskan ke tim pengelola KUBE Desa Banyukuning.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // Inisialisasi Lucide Icons
+    lucide.createIcons();
+
+    // Data Keranjang Belanja
+    const cart = {
+      '500g': { name: 'RUBI 500g (Vacuum & Box)', price: 27600, qty: 0 },
+      '1kg': { name: 'RUBI 1kg (Pouch Glossy)', price: 48600, qty: 0 }
+    };
+
+    // Toggle Mobile Navigation Menu
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    }
+
+    // Toggle Cart Drawer
+    function toggleCartDrawer(show) {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      if (show) {
+        backdrop.classList.remove('hidden');
+        drawer.classList.remove('translate-x-full');
+      } else {
+        backdrop.classList.add('hidden');
+        drawer.classList.add('translate-x-full');
+      }
+    }
+
+    // Update Item Quantity
+    function updateQty(variant, delta) {
+      cart[variant].qty = Math.max(0, cart[variant].qty + delta);
+      renderCartUI();
+    }
+
+    // Quick Add from Catalog
+    function quickAddToCart(variant) {
+      cart[variant].qty += 1;
+      renderCartUI();
+      toggleCartDrawer(true);
+    }
+
+    // Render Cart State to UI
+    function renderCartUI() {
+      document.getElementById('qty-500g').innerText = cart['500g'].qty;
+      document.getElementById('qty-1kg').innerText = cart['1kg'].qty;
+
+      const totalItems = cart['500g'].qty + cart['1kg'].qty;
+      const totalPrice = (cart['500g'].qty * cart['500g'].price) + (cart['1kg'].qty * cart['1kg'].price);
+
+      document.getElementById('navCartCount').innerText = totalItems;
+      document.getElementById('cartTotalPrice').innerText = 'Rp' + totalPrice.toLocaleString('id-ID');
+    }
+
+    // Generate WhatsApp Checkout Message
+    function checkoutToWhatsApp() {
+      const totalItems = cart['500g'].qty + cart['1kg'].qty;
+      if (totalItems === 0) {
+        alert('Keranjang belanja Anda masih kosong. Silakan pilih minimal 1 produk varian 500g atau 1kg.');
+        return;
+      }
+
+      const name = document.getElementById('custName').value.trim() || 'Pelanggan Sehat';
+      const address = document.getElementById('custAddress').value.trim() || '-';
+      const totalPrice = (cart['500g'].qty * cart['500g'].price) + (cart['1kg'].qty * cart['1kg'].price);
+
+      let text = `*FORMULIR PEMESANAN BERAS ANALOG RUBI*\n`;
+      text += `_Program Electrifying Agriculture Desa Banyukuning_\n`;
+      text += `--------------------------------------\n`;
+      text += `*Nama Pemesan:* ${name}\n`;
+      text += `*Alamat / Kota:* ${address}\n\n`;
+      text += `*Rincian Pesanan:*\n`;
+      
+      if (cart['500g'].qty > 0) {
+        text += `• ${cart['500g'].qty}x RUBI 500g (Vacuum & Box) @ Rp27.600 = Rp${(cart['500g'].qty * cart['500g'].price).toLocaleString('id-ID')}\n`;
+      }
+      if (cart['1kg'].qty > 0) {
+        text += `• ${cart['1kg'].qty}x RUBI 1kg (Pouch Glossy) @ Rp48.600 = Rp${(cart['1kg'].qty * cart['1kg'].price).toLocaleString('id-ID')}\n`;
+      }
+
+      text += `--------------------------------------\n`;
+      text += `*Estimasi Total:* Rp${totalPrice.toLocaleString('id-ID')}\n\n`;
+      text += `Mohon info ketersediaan stok dan estimasi ongkos kirim. Terima kasih atas dukungannya bagi kemandirian petani lokal Desa Banyukuning! 🙏`;
+
+      const encodedText = encodeURIComponent(text);
+      const waNumber = '6281234567890'; // Nomor CS / Pengelola KUBE
+      window.open(`https://wa.me/${waNumber}?text=${encodedText}`, '_blank');
+    }
+  </script>
+</body>
+</html>
